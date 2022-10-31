@@ -1,7 +1,7 @@
 package com.batuhan.mapper;
 
 import com.batuhan.dto.request.SaveRequestDto;
-import com.batuhan.dto.response.CreateForWareHouseDto;
+import com.batuhan.dto.response.CreateStockDto;
 import com.batuhan.dto.response.UpdateStockDto;
 import com.batuhan.repository.entity.Product;
 import org.mapstruct.Mapper;
@@ -15,7 +15,9 @@ public interface IProductMapper {
 
     Product toProduct (final SaveRequestDto dto);
 
-    CreateForWareHouseDto toCreateForWareHouseDto (final Product product);
+    CreateStockDto toCreateForWareHouseDto (final Product product);
+
+    CreateStockDto toCreateStockDto(Product product);
 
     UpdateStockDto toUpdateStockDto (final Product product);
 

@@ -13,13 +13,13 @@ import javax.persistence.Enumerated;
 @AllArgsConstructor
 @Data
 @Builder
-public class CreateForWareHouseDto {
+public class CreateStockDto {
 
     Long productid;
     String name;
     String brand;
     Category category;
     @Enumerated
-    Quality quality
+    Quality quality;
 
 }

@@ -1,7 +1,7 @@
 package com.batuhan.mapper;
 
 import com.batuhan.dto.request.SaveRequestDto;
-import com.batuhan.dto.response.CreateForWareHouseDto;
+import com.batuhan.dto.response.CreateStockDto;
 import com.batuhan.dto.response.UpdateStockDto;
 import com.batuhan.repository.entity.Product;
 import com.batuhan.repository.enums.Category;
@@ -34,12 +34,17 @@ public class IProductMapperImpl implements IProductMapper {
     }
 
     @Override
-    public CreateForWareHouseDto toCreateStockDto(Product product) {
+    public CreateStockDto toCreateForWareHouseDto(Product product) {
+        return null;
+    }
+
+    @Override
+    public CreateStockDto toCreateStockDto(Product product) {
         if ( product == null ) {
             return null;
         }
 
-        CreateForWareHouseDto.CreateStockDtoBuilder createStockDto = CreateForWareHouseDto.builder();
+        CreateStockDto.CreateStockDtoBuilder createStockDto = CreateStockDto.builder();
 
         createStockDto.name( product.getName() );
         createStockDto.brand( product.getBrand() );

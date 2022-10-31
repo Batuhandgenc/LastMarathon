@@ -1,7 +1,6 @@
 package com.batuhan.manager;
 
-import com.batuhan.dto.response.CreateForWareHouseDto;
-import com.batuhan.dto.response.UpdateStockDto;
+import com.batuhan.dto.response.CreateStockDto;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -13,10 +12,10 @@ import static com.batuhan.constant.EndPoint.*;
 public interface IStockManager {
 
     @PostMapping(SAVE)
-    public ResponseEntity<Boolean> save(@RequestBody CreateForWareHouseDto dto);
+    public ResponseEntity<Boolean> save(@RequestBody CreateStockDto dto);
 
     @PostMapping(UPDATESTOCK)
-    public  ResponseEntity<Boolean> update(@RequestBody CreateForWareHouseDto dto);
+    public  ResponseEntity<Boolean> update(@RequestBody CreateStockDto dto);
 
 
 }

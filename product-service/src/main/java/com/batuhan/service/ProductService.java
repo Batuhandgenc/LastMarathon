@@ -2,7 +2,7 @@ package com.batuhan.service;
 
 import com.batuhan.dto.request.SaveRequestDto;
 import com.batuhan.dto.request.UpdateRequestDto;
-import com.batuhan.dto.response.CreateForWareHouseDto;
+import com.batuhan.dto.response.CreateStockDto;
 import com.batuhan.dto.response.UpdateStockDto;
 import com.batuhan.exception.ErrorType;
 import com.batuhan.exception.ProductServiceException;
@@ -36,7 +36,7 @@ public class ProductService extends ServiceManager<Product,Long> {
         try {
             product = Optional.ofNullable(IProductMapper.INSTANCE.toProduct(dto));
             save(product.get());
-            stockManager.save(CreateForWareHouseDto.builder()
+            stockManager.save(CreateStockDto.builder()
                     .category(product.get().getCategory())
                     .productid(product.get().getId())
                     .name(product.get().getName())
@@ -52,10 +52,7 @@ public class ProductService extends ServiceManager<Product,Long> {
     public String updateQuantity(UpdateRequestDto dto){
         Optional<Product> product = productRepository.findOptionalById(dto.getId());
         if (product.isPresent()){
-            stockManager.update(UpdateStockDto.builder()
-                    .quantity(dto.getQuantity())
-                    .productid(dto.getId())
-                    .build());
+
         }
         return "Market stock is updated";
     }
