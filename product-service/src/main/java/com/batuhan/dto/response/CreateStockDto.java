@@ -7,7 +7,9 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.Id;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -15,11 +17,13 @@ import javax.persistence.Enumerated;
 @Builder
 public class CreateStockDto {
 
+    @Id
     Long productid;
     String name;
-    String brand;
+    String brandname;
+    @Enumerated(EnumType.STRING)
     Category category;
-    @Enumerated
+    @Enumerated(EnumType.STRING)
     Quality quality;
 
 }

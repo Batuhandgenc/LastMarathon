@@ -40,7 +40,7 @@ public class ProductService extends ServiceManager<Product,Long> {
                     .category(product.get().getCategory())
                     .productid(product.get().getId())
                     .name(product.get().getName())
-                    .brand(product.get().getBrand())
+                    .brandname(product.get().getBrandname())
                     .build());
             return "Product is save";
         }catch (Exception e){
