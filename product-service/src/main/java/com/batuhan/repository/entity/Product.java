@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 
@@ -22,7 +23,9 @@ public class Product {
     String brand;
     @Enumerated(EnumType.STRING)
     Category category;
+    @DateTimeFormat
     Long productionDate;
+    @DateTimeFormat
     Long expiredDate;
 
 }

@@ -22,7 +22,7 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(RuntimeException.class)
     @ResponseBody
     public ResponseEntity<String> handleRuntimeException(RuntimeException ex){
-        return ResponseEntity.badRequest().body("Beklenmeyen bir hata oldu..: "+ex.getMessage());
+        return ResponseEntity.badRequest().body("Unexpected Error "+ex.getMessage());
     }
 
     @ExceptionHandler(StockServiceException.class)
@@ -87,7 +87,7 @@ public class GlobalExceptionHandler {
     }
 
     private ErrorMessage createError(ErrorType errorType, Exception exception){
-        System.out.println("Hata olu�tu: " + exception.getMessage());
+        System.out.println("404 Error" + exception.getMessage());
         return ErrorMessage.builder()
                 .code(errorType.getCode())
                 .message(errorType.getMessage())
