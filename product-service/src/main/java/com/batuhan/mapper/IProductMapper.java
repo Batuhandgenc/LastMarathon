@@ -17,8 +17,6 @@ public interface IProductMapper {
 
     CreateStockDto toCreateForWareHouseDto (final Product product);
 
-    CreateStockDto toCreateStockDto(Product product);
-
     UpdateStockDto toUpdateStockDto (final Product product);
 
 }

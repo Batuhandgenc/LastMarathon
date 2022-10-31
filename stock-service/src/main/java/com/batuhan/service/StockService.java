@@ -1,7 +1,6 @@
 package com.batuhan.service;
 
 import com.batuhan.dto.request.CreateForWareHouseDto;
-import com.batuhan.dto.request.CreateForWareHouseDto;
 import com.batuhan.dto.request.UpdateForWareHouseDto;
 import com.batuhan.exception.ErrorType;
 import com.batuhan.exception.StockServiceException;
