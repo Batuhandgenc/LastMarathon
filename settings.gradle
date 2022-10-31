@@ -1,0 +1,5 @@
+rootProject.name = 'ProductManager'
+include 'product-service'
+include 'stock-service'
+include 'config-server'
+
