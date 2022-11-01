@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 import static com.batuhan.constant.EndPoint.*;
 
-@FeignClient(name = "stock-manager", url = "http://localhost:8090/api/v1/stock", decode404 = true)
+@FeignClient(name = "stock-manager", url = "http://localhost:8090/api/v1/warehouseDB", decode404 = true)
 public interface IStockManager {
 
     @PostMapping(SAVE)
